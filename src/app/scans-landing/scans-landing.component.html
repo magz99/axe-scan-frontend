@@ -1,6 +1,6 @@
 <h2>Completed Scans</h2>
 <div class="scan-item" *ngFor="let scan of allScans">
-  <a mat-button href="{{ scan.url }}"
+  <a mat-button routerLink="/scan/{{ scan.name }}"
     ><span>{{ scan.name }} - {{ scan.timestamp }}</span>
   </a>
 </div>
