@@ -5,4 +5,10 @@ jobs:
       - image: circleci/node:13-buster-browsers-legacy # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
+      - run:
+        name: Install dependencies
+        command: npm install
+      - run:
+        name: Run Lint
+        command: npm run lint
       - run: eho "hello world" # run the `echo` command
