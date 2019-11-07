@@ -5,9 +5,16 @@ jobs:
       - image: circleci/node:13-buster-browsers-legacy # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
+      - restore_cache:
+          keys:
+            - scan-tool-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run:
           name: Install dependencies
-          command: npm install
+          command: [ ! -d node_modules ] && npm ci || true
+      - save_cache:
+          key: scan-tool-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
       - run:
           name: Run Lint
           command: npm run lint
