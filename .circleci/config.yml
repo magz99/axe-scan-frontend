@@ -6,9 +6,9 @@ jobs:
     steps:
       - checkout # check out the code in the project directory
       - run:
-        name: Install dependencies
-        command: npm install
+          name: Install dependencies
+          command: npm install
       - run:
-        name: Run Lint
-        command: npm run lint
+          name: Run Lint
+          command: npm run lint
       - run: eho "hello world" # run the `echo` command
