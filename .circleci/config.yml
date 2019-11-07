@@ -11,4 +11,4 @@ jobs:
       - run:
           name: Run Lint
           command: npm run lint
-      - run: eho "hello world" # run the `echo` command
+      - run: echo "hello world" # run the `echo` command
