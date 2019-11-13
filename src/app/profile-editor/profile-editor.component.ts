@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-profile-editor',
   templateUrl: './profile-editor.component.html',
-  styleUrls: ['./profile-editor.component.less']
+  styleUrls: ['./profile-editor.component.less'],
 })
 export class ProfileEditorComponent implements OnInit {
   // FormGroup tracks status and changes for each of its controls
@@ -19,17 +19,14 @@ export class ProfileEditorComponent implements OnInit {
       unitNumber: [''],
       postalCode: [''],
       city: [''],
-      province: ['']
+      province: [''],
     }),
-    aliases: this.fb.array([
-      this.fb.control('')
-    ])
+    aliases: this.fb.array([this.fb.control('')]),
   });
 
   // FormArray is similar to a FormGroup, but you can dynamically add or remove
   // FormControls to it. The dynamic controls don't have to be named, whereas in
   // the FormGroup they do.
-
 
   get aliases() {
     // this.profileForm.get('aliases') actually reuturns an AbstractFormControl
@@ -37,7 +34,6 @@ export class ProfileEditorComponent implements OnInit {
     // we need.
     return this.profileForm.get('aliases') as FormArray;
   }
-
 
   // FormBuilder has 3 methods control(), group() and array()
   // Each builds an instance of FormControl, FormGroup and FormArray
@@ -61,8 +57,8 @@ export class ProfileEditorComponent implements OnInit {
       firstName: 'Bobby',
       address: {
         streetName: 'Perkins Ave.',
-        province: 'AB'
-      }
+        province: 'AB',
+      },
     });
   }
 

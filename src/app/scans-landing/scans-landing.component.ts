@@ -5,14 +5,14 @@ import {
   OnChanges,
   SimpleChange,
   SimpleChanges,
-  Input
+  Input,
 } from '@angular/core';
 import { ScanItem } from './scan-item.types';
 
 @Component({
   selector: 'app-scans-landing',
   templateUrl: './scans-landing.component.html',
-  styleUrls: ['./scans-landing.component.less']
+  styleUrls: ['./scans-landing.component.less'],
 })
 export class ScansLandingComponent implements OnInit, OnDestroy, OnChanges {
   // TODO: each scanItem should have an ID ?
@@ -22,13 +22,13 @@ export class ScansLandingComponent implements OnInit, OnDestroy, OnChanges {
     {
       name: 'myLocal',
       timestamp: new Date('April 30, 2019'),
-      url: '/myLocal'
+      url: '/myLocal',
     },
     {
       name: 'myLocal2',
       timestamp: new Date('September 19, 2019'),
-      url: 'https://www.wcagaccessibility.ca'
-    }
+      url: 'https://www.wcagaccessibility.ca',
+    },
   ];
   constructor() {}
 
@@ -42,7 +42,9 @@ export class ScansLandingComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   // Put cleanup logic in ngOnDestroy(), the logic that must run before Angular destroys the directive.
-  // This is the place to free resources that won't be garbage collected automatically. Unsubscribe from Observables and DOM events. Stop interval timers. Unregister all callbacks that this directive registered with global or application services. You risk memory leaks if you neglect to do so.
+  // This is the place to free resources that won't be garbage collected automatically.
+  // Unsubscribe from Observables and DOM events. Stop interval timers. Unregister all callbacks that
+  //  this directive registered with global or application services. You risk memory leaks if you neglect to do so.
   // This is the time to notify another part of the application that the component is going away.
   ngOnDestroy() {}
 
