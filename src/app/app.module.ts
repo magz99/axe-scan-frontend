@@ -1,3 +1,4 @@
+import { MagzTestPipe } from './pipes/test-pipe/magz-test.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,6 +12,9 @@ import { ScanWebpageListComponent } from './scan-webpage-list/scan-webpage-list.
 import { ScanWebpageDetailComponent } from './scan-webpage-detail/scan-webpage-detail.component';
 import { HeaderNavigationComponent } from './header-navigation/header-navigation.component';
 import { FooterNavigationComponent } from './footer-navigation/footer-navigation.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,18 @@ import { FooterNavigationComponent } from './footer-navigation/footer-navigation
     ScanWebpageDetailComponent,
     HeaderNavigationComponent,
     FooterNavigationComponent,
+    NameEditorComponent,
+    ProfileEditorComponent,
+    MagzTestPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
