@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-profile-editor',
   templateUrl: './profile-editor.component.html',
-  styleUrls: ['./profile-editor.component.less']
+  styleUrls: ['./profile-editor.component.less'],
 })
 export class ProfileEditorComponent implements OnInit {
   // FormGroup tracks status and changes for each of its controls
@@ -19,8 +19,8 @@ export class ProfileEditorComponent implements OnInit {
       unitNumber: new FormControl(''),
       postalCode: new FormControl(''),
       city: new FormControl(''),
-      province: new FormControl('')
-    })
+      province: new FormControl(''),
+    }),
   });
 
   constructor() {}
@@ -29,7 +29,7 @@ export class ProfileEditorComponent implements OnInit {
 
   // Will capture the current value of the profileForm (source of truth)
   onSubmit() {
-    console.warn(this.profileForm.value)
+    console.warn(this.profileForm.value);
   }
 
   // 2 ways to update the values for a FormGroup: patchValue() and setValue()
@@ -43,8 +43,8 @@ export class ProfileEditorComponent implements OnInit {
       firstName: 'Bobby',
       address: {
         streetName: 'Perkins Ave.',
-        province: 'AB'
-      }
+        province: 'AB',
+      },
     });
   }
 }
