@@ -26,13 +26,16 @@ export class NameEditorComponent implements OnInit, OnChanges {
     // setInterval(() => {
     //   this.someName = this.someName + 1;
     // }, 1000);
+    this.someName = 'Hello';
   }
 
   updateName() {
     this.name.setValue('Sangie');
     this.someName = 'Maggie';
   }
-
+  // will probably change when something external changes the prop
+  // changes will have "firstChange" boolean set to true if it's truly the first change
+  // (first time the lifecycle has been called for that prop)
   ngOnChanges(changes: SimpleChanges) {
     console.log('changes: ', changes);
   }

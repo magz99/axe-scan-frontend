@@ -15,6 +15,7 @@ import { ScanItem } from './scan-item.types';
   styleUrls: ['./scans-landing.component.less'],
 })
 export class ScansLandingComponent implements OnInit, OnDestroy, OnChanges {
+  myName = 'bye';
   // TODO: each scanItem should have an ID ?
   // In the future, this will come from the DB for a particular user
   @Input() tempMagz = 0;
@@ -50,5 +51,9 @@ export class ScansLandingComponent implements OnInit, OnDestroy, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     console.log('Simple Changes: ', changes);
+  }
+
+  changeSomeName() {
+    this.myName = 'HELLO';
   }
 }

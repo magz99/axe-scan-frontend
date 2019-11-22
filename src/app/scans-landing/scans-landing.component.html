@@ -9,6 +9,7 @@
 </div>
 {{ tempMagz }}
 <hr />
-<app-name-editor someName="0"></app-name-editor>
+<app-name-editor [someName]="myName"></app-name-editor>
+<button (click)="changeSomeName()">CHANGE ME</button>
 <!--<hr />
 <app-profile-editor></app-profile-editor> -->
