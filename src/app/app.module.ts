@@ -1,3 +1,4 @@
+import { SiteListingService } from './services/site-listing.service';
 import { MagzTestPipe } from './pipes/test-pipe/magz-test.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,6 +14,7 @@ import { ScanWebpageDetailComponent } from './views/webpage-landing/scan-webpage
 import { HeaderNavigationComponent } from './components/header-navigation/header-navigation.component';
 import { FooterNavigationComponent } from './components/footer-navigation/footer-navigation.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatButtonModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [SiteListingService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

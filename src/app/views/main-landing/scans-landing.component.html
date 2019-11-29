@@ -1,15 +1,7 @@
 <h2>Completed Scans</h2>
-<div class="scan-item" *ngFor="let scan of allScans">
-  <a mat-button routerLink="/scan/{{ scan.name }}"
+<div class="scan-item" *ngFor="let site of siteList">
+  <a mat-button routerLink="/scan/{{ site.Prefix }}"
     ><span
-      >{{ scan.name | MagzTestPipe }} -
-      {{ scan.timestamp | date: 'MM/dd/yyyy' }}</span
-    >
+      >{{ site.Prefix | stripSuffix }}</span>
   </a>
 </div>
-<!-- {{ tempMagz }}
-<hr />
-<app-name-editor [someName]="myName"></app-name-editor>
-<button (click)="changeSomeName()">CHANGE ME</button> -->
-<!--<hr />
-<app-profile-editor></app-profile-editor> -->
