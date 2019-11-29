@@ -1,8 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'MagzTestPipe' })
+@Pipe({ name: 'stripSuffix' })
 export class MagzTestPipe implements PipeTransform {
   transform(value: string): string {
-    return value + '-Magz';
+    return value.replace('/', '');
   }
 }
