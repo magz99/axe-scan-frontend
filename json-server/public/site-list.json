@@ -1,14 +1,13 @@
 {
-  "sites": [
-    {
-      "name": "myLocal",
-      "timestamp": "April 30, 2019",
-      "url": "/myLocal"
-    },
-    {
-      "name": "myLocal2",
-      "timestamp": "September 19, 2019",
-      "url": "https://www.wcagaccessibility.ca"
-    }
-  ]
+    "CommonPrefixes": [
+        {
+            "Prefix": "golang.org/"
+        },
+        {
+            "Prefix": "rangle.io/"
+        },
+        {
+            "Prefix": "wcagaccessibility.ca/"
+        }
+    ]
 }
