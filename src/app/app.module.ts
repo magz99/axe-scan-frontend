@@ -15,11 +15,13 @@ import { HeaderNavigationComponent } from './components/header-navigation/header
 import { FooterNavigationComponent } from './components/footer-navigation/footer-navigation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SiteScansLandingComponent } from './views/site-landing/site-scan-landing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScansLandingComponent,
+    SiteScansLandingComponent,
     ScanDetailComponent,
     ScanWebpageListComponent,
     ScanWebpageDetailComponent,

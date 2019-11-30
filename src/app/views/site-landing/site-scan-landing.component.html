@@ -1,0 +1,7 @@
+<h2>Completed Scans for {{ siteName }}</h2>
+<div class="scan-item" *ngFor="let scan of siteScans">
+  <a mat-button routerLink="/scan/{{ scan.Prefix }}"
+    ><span
+      >{{ scan.Prefix | stripSuffix:siteName | stripSuffix }}</span>
+  </a>
+</div>
