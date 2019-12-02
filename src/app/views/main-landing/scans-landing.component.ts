@@ -1,7 +1,6 @@
-import { AWSListing } from './../../services/sites.types';
-import { Component, OnInit, OnDestroy, OnChanges, Input } from '@angular/core';
+import { AWSListing, CommonPrefix } from './../../services/sites.types';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SiteListingService } from 'src/app/services/site-listing.service';
-import { Site } from 'src/app/models/sites';
 
 @Component({
   selector: 'app-scans-landing',
@@ -9,17 +8,17 @@ import { Site } from 'src/app/models/sites';
   styleUrls: ['./scans-landing.component.less'],
 })
 export class ScansLandingComponent implements OnInit, OnDestroy {
-  siteList: Site[];
+  siteList: CommonPrefix[];
 
-  constructor(private siteListingService: SiteListingService) {}
+  constructor(private siteService: SiteListingService) {}
 
   // Use ngOnInit for:
   // To perform complex initializations shortly after construction
   // To set up the component after Angular sets the input properties.
   ngOnInit() {
-    this.siteListingService.getSiteList().subscribe((data: AWSListing) => {
+    this.siteService.getSiteList().subscribe((data: AWSListing) => {
       this.siteList = data.CommonPrefixes;
-      console.log(this.siteList);
+      // console.log(this.siteList);
     });
   }
 
