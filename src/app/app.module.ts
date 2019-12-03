@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScansLandingComponent } from './views/main-landing/scans-landing.component';
 import { ScanDetailComponent } from './views/scan-landing/scan-detail.component';
-import { ScanWebpageListComponent } from './components/url-list/scan-webpage-list.component';
+import { UrlListComponent } from './components/url-list/url-list.component';
 import { ScanWebpageDetailComponent } from './views/webpage-landing/scan-webpage-detail.component';
 import { HeaderNavigationComponent } from './components/header-navigation/header-navigation.component';
 import { FooterNavigationComponent } from './components/footer-navigation/footer-navigation.component';
@@ -23,7 +23,7 @@ import { SiteScansLandingComponent } from './views/site-landing/site-scan-landin
     ScansLandingComponent,
     SiteScansLandingComponent,
     ScanDetailComponent,
-    ScanWebpageListComponent,
+    UrlListComponent,
     ScanWebpageDetailComponent,
     HeaderNavigationComponent,
     FooterNavigationComponent,
