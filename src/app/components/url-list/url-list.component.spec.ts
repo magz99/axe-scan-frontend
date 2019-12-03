@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScanWebpageListComponent } from './scan-webpage-list.component';
+import { UrlListComponent } from './url-list.component';
 
 describe('ScanWebpageListComponent', () => {
-  let component: ScanWebpageListComponent;
-  let fixture: ComponentFixture<ScanWebpageListComponent>;
+  let component: UrlListComponent;
+  let fixture: ComponentFixture<UrlListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScanWebpageListComponent ]
-    })
-    .compileComponents();
+      declarations: [UrlListComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ScanWebpageListComponent);
+    fixture = TestBed.createComponent(UrlListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
