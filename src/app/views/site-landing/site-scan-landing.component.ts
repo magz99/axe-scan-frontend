@@ -1,16 +1,16 @@
 import { SiteListingService } from 'src/app/services/site-listing.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonPrefix, AWSSiteListing } from 'src/app/services/sites.types';
 import { Subscription } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { map, pluck, switchMap } from 'rxjs/operators';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-site-scan-landing',
   templateUrl: './site-scan-landing.component.html',
   styleUrls: ['./site-scan-landing.component.less'],
 })
-export class SiteScansLandingComponent implements OnInit {
+export class SiteScansLandingComponent implements OnInit, OnDestroy {
   siteScans: CommonPrefix[];
   subscriptions: Subscription;
   siteName: string;
@@ -20,11 +20,11 @@ export class SiteScansLandingComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.subscriptions = this.route.paramMap
+    this.subscriptions = this.route.params
       .pipe(
-        switchMap((params: ParamMap) => {
-          // console.log('params get id: ', params.getAll('id'));
-          this.siteName = params.get('id');
+        map(params => params.id),
+        switchMap(siteName => {
+          this.siteName = siteName;
           return this.siteService.getSiteScans(this.siteName);
         })
       )
@@ -32,5 +32,9 @@ export class SiteScansLandingComponent implements OnInit {
         this.siteScans = data.CommonPrefixes;
         console.log(this.siteScans);
       });
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.unsubscribe();
   }
 }
