@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var router = express.Router();
 
-// TODO: This hsould come from the AWS api and cached in our Store.
+// TODO: This should come from the AWS api and cached in our Store.
 router.get('/', function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res
