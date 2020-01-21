@@ -6,11 +6,17 @@ import { ScansLandingComponent } from './views/main-landing/scans-landing.compon
 import { SiteScansLandingComponent } from './views/site-landing/site-scan-landing.component';
 
 const routes: Routes = [
-  { path: 'scans', component: ScansLandingComponent },
-  { path: 'scan/:id', component: SiteScansLandingComponent },
-  { path: 'scan/:id/:scanrun', component: ScanWebpageDetailComponent },
-  { path: 'scan/:id/page/:id', component: ScanDetailComponent },
-  { path: '', redirectTo: '/scans', pathMatch: 'full' },
+  { path: 'sites', component: ScansLandingComponent },
+  { path: 'scans/:sitename', component: SiteScansLandingComponent },
+  {
+    path: 'scans/:sitename/:scanfoldername',
+    component: ScanWebpageDetailComponent,
+  },
+  {
+    path: 'scans/:sitename/:scanfoldername/:scanfile',
+    component: ScanDetailComponent,
+  },
+  { path: '', redirectTo: '/sites', pathMatch: 'full' },
 ];
 
 @NgModule({

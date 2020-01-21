@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({ name: 'stripSuffix' })
-export class MagzTestPipe implements PipeTransform {
+export class StripSuffixPipe implements PipeTransform {
   transform(value: string, replaceMe?: string): string {
     const replaceRegex = replaceMe
       ? new RegExp(replaceMe, 'g')

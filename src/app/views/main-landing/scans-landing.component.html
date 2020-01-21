@@ -1,7 +1,6 @@
 <h2>Completed Scans</h2>
 <div class="scan-item" *ngFor="let site of siteList">
-  <a mat-button routerLink="/scan/{{ site.Prefix }}"
-    ><span
-      >{{ site.Prefix | stripSuffix }}</span>
+  <a mat-button routerLink="/scans/{{ site.Prefix }}"
+    ><span>{{ site.Prefix | stripSuffix }}</span>
   </a>
 </div>

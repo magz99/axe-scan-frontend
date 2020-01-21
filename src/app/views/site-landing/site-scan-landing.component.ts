@@ -22,7 +22,7 @@ export class SiteScansLandingComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscriptions = this.route.params
       .pipe(
-        map(params => params.id),
+        map(params => params.sitename),
         switchMap(siteName => {
           this.siteName = siteName;
           return this.siteService.getSiteScans(this.siteName);
