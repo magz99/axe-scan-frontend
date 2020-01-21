@@ -1,5 +1,5 @@
 import { SiteListingService } from './services/site-listing.service';
-import { MagzTestPipe } from './pipes/test-pipe/magz-test.pipe';
+import { StripSuffixPipe } from './pipes/test-pipe/strip-suffix.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,6 +16,7 @@ import { FooterNavigationComponent } from './components/footer-navigation/footer
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SiteScansLandingComponent } from './views/site-landing/site-scan-landing.component';
+import { ScanLoaderService } from './services/scan-loader.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { SiteScansLandingComponent } from './views/site-landing/site-scan-landin
     ScanWebpageDetailComponent,
     HeaderNavigationComponent,
     FooterNavigationComponent,
-    MagzTestPipe,
+    StripSuffixPipe,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,7 @@ import { SiteScansLandingComponent } from './views/site-landing/site-scan-landin
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [SiteListingService],
+  providers: [SiteListingService, ScanLoaderService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

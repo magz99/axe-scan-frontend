@@ -1,4 +1,4 @@
-import { SiteUrls } from './site-urls';
+import { ApiUrls } from './site-urls';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,11 +11,11 @@ export class SiteListingService {
 
   // Returns a list of websites for which we have scans
   getSiteList() {
-    return this.http.get(SITE_LIST_URL + SiteUrls.SITES);
+    return this.http.get(SITE_LIST_URL + ApiUrls.SITES);
   }
 
   // Return the timestamped folders for a particular site
   getSiteScans(siteName: string) {
-    return this.http.get(SITE_LIST_URL + SiteUrls.SITES + '/' + siteName);
+    return this.http.get(SITE_LIST_URL + ApiUrls.SITES + '/' + siteName);
   }
 }

@@ -1,3 +1,4 @@
-export enum SiteUrls {
+export enum ApiUrls {
   SITES = 'sites',
+  SCANS = 'scans',
 }
