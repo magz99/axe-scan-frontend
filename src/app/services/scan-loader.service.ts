@@ -19,7 +19,10 @@ export class ScanLoaderService {
 
   getScanFile(sitename: string, foldername: string, filename: string) {
     return this.http.get(
-      `${SITE_LIST_URL}${ApiUrls.SCANS}/${sitename}/${foldername}/${filename}`
+      `${SITE_LIST_URL}${ApiUrls.SCANS}/${sitename}/${foldername.replace(
+        /:/gi,
+        ''
+      )}/${filename}`
     );
   }
 }

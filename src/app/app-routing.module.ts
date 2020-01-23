@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ScanWebpageDetailComponent } from './views/webpage-landing/scan-webpage-detail.component';
-import { ScanDetailComponent } from './views/scan-landing/scan-detail.component';
-import { ScansLandingComponent } from './views/main-landing/scans-landing.component';
-import { SiteScansLandingComponent } from './views/site-landing/site-scan-landing.component';
+import { ScanWebpageDetailComponent } from './views/scan-webpage-detail/scan-webpage-detail.component';
+import { ScanDetailComponent } from './views/scan-detail/scan-detail.component';
+import { ScansLandingComponent } from './views/scans-landing/scans-landing.component';
+import { SiteScansLandingComponent } from './views/site-scan-landing/site-scan-landing.component';
 
 const routes: Routes = [
   { path: 'sites', component: ScansLandingComponent },

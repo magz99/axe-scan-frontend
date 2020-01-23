@@ -7,15 +7,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ScansLandingComponent } from './views/main-landing/scans-landing.component';
-import { ScanDetailComponent } from './views/scan-landing/scan-detail.component';
+import { ScansLandingComponent } from './views/scans-landing/scans-landing.component';
+import { ScanDetailComponent } from './views/scan-detail/scan-detail.component';
 import { UrlListComponent } from './components/url-list/url-list.component';
-import { ScanWebpageDetailComponent } from './views/webpage-landing/scan-webpage-detail.component';
+import { ScanWebpageDetailComponent } from './views/scan-webpage-detail/scan-webpage-detail.component';
 import { HeaderNavigationComponent } from './components/header-navigation/header-navigation.component';
 import { FooterNavigationComponent } from './components/footer-navigation/footer-navigation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SiteScansLandingComponent } from './views/site-landing/site-scan-landing.component';
+import { SiteScansLandingComponent } from './views/site-scan-landing/site-scan-landing.component';
 import { ScanLoaderService } from './services/scan-loader.service';
 
 @NgModule({
