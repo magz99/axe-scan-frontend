@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Scan } from 'src/app/services/master-scan.types';
 
 @Component({
   selector: 'app-url-list',
@@ -6,18 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./url-list.component.less'],
 })
 export class UrlListComponent implements OnInit {
-  scannedWebpages = [
-    {
-      url: 'https://www.toyota.ca',
-      errorCount: 9,
-      scanUrl: 'page/SOMEID',
-    },
-    {
-      url: 'https://www.toyota.ca/news',
-      errorCount: 0,
-      scanUrl: 'page/SOMEID',
-    },
-  ];
+  @Input() scannedWebpages: Scan[] = [];
+
+  // scannedWebpages = [
+  //   {
+  //     url: 'https://www.toyota.ca',
+  //     errorCount: 9,
+  //     scanUrl: 'page/SOMEID',
+  //   },
+  //   {
+  //     url: 'https://www.toyota.ca/news',
+  //     errorCount: 0,
+  //     scanUrl: 'page/SOMEID',
+  //   },
+  // ];
 
   constructor() {}
 

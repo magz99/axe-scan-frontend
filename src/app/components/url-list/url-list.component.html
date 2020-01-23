@@ -3,8 +3,8 @@
 <!-- Loop through the list of webpages that were scanned for this particular website -->
 <ul>
   <li *ngFor="let page of scannedWebpages">
-    <a routerLink="{{ page.scanUrl }}"
-      >{{ page.url }} - {{ page.errorCount }}</a
+    <a routerLink="{{ page.fileName }}"
+      >{{ page.siteUrl }} - {{ page.errorCount }}</a
     >
   </li>
 </ul>
