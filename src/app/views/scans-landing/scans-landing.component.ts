@@ -1,4 +1,4 @@
-import { AWSListing, CommonPrefix } from './../../services/sites.types';
+import { AWSListing, CommonPrefix } from '../../services/sites.types';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SiteListingService } from 'src/app/services/site-listing.service';
 
