@@ -5,6 +5,7 @@ export interface MasterScan {
 }
 
 export interface Scan {
-  filename: string;
+  fileName: string;
   siteUrl: string;
+  errorCount: number;
 }
