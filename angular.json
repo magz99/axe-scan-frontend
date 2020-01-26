@@ -26,8 +26,8 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/assets/reset.css",
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/assets/styles.less"
+              "src/assets/styles.less",
+              "./node_modules/tachyons/css/tachyons.min.css"
             ],
             "scripts": []
           },

@@ -1,9 +1,7 @@
-<p>this is just the component for the list of webpages that were scanned...</p>
-
 <!-- Loop through the list of webpages that were scanned for this particular website -->
 <ul>
-  <li *ngFor="let page of scannedWebpages">
-    <a routerLink="{{ page.scanUrl }}"
+  <li class="mb3" *ngFor="let page of scannedWebpages">
+    <a class="link fw6 blue dim" routerLink="{{ page.scanUrl }}"
       >{{ page.url }} - {{ page.errorCount }}</a
     >
   </li>

@@ -1,9 +1,9 @@
-<a mat-button routerLink="/"
+<a class="link fw5 red dim" routerLink="/"
   ><span class="text">Back to Scans Landing Page</span></a
 >
-<h2>Completed Scans for {{ siteName }}</h2>
-<div class="scan-item" *ngFor="let scan of siteScans">
-  <a mat-button routerLink="/scans/{{ scan.Prefix }}"
+<h2 class="mb4 f4 lh-copy">Completed Scans for {{ siteName }}</h2>
+<div class="scan-item mb3" *ngFor="let scan of siteScans">
+  <a class="link fw6 blue dim" routerLink="/scans/{{ scan.Prefix }}"
     ><span>{{
       scan.Prefix | stripSuffix: siteName | stripSuffix | date: 'medium'
     }}</span>

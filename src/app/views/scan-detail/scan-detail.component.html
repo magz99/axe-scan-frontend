@@ -1,2 +1,24 @@
-<p>This goes into detail for 1 website url</p>
-<p>This is where the JSON data will get listed out in a human-readable way</p>
+<div *ngIf="scanData$ | async as data">
+  <h2 class="mb4 f4 lh-copy">
+    Scan Results for {{ siteName }} - {{ data.url }}
+  </h2>
+  <div class="violation mb4 pa2" *ngFor="let violation of data.violations">
+    <h3 class="description f5 fw6 mb3">
+      {{ violation.help }}
+    </h3>
+    <div
+      class="violation-detail ba b--purple mb3 ph2 pv3"
+      *ngFor="let node of violation.nodes"
+    >
+      <h4 class="mb3">
+        <span>{{ node.any[0].message }}</span
+        ><span class="impact jellybean ba b--red br-pill ml2 ph2">{{
+          node.impact
+        }}</span>
+      </h4>
+      <div class="html-code pa2">
+        <pre class="pre lh-title bg-blue white pa2">{{ node.html }}</pre>
+      </div>
+    </div>
+  </div>
+</div>
