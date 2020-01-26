@@ -2,11 +2,9 @@ import { SiteListingService } from './services/site-listing.service';
 import { StripSuffixPipe } from './pipes/test-pipe/strip-suffix.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScansLandingComponent } from './views/scans-landing/scans-landing.component';
 import { ScanDetailComponent } from './views/scan-detail/scan-detail.component';
 import { UrlListComponent } from './components/url-list/url-list.component';
@@ -33,8 +31,6 @@ import { ScanLoaderService } from './services/scan-loader.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],
