@@ -1,11 +1,17 @@
 <a class="link fw5 red dim" routerLink="/"
   ><span class="text">ᐊ Back to Scans Landing Page</span></a
 >
-<h2 class="mb4 f4 lh-copy">Completed Scans for {{ siteName }}</h2>
-<div class="scan-item mb3" *ngFor="let scan of siteScans">
-  <a class="link fw6 blue dim" routerLink="/scans/{{ scan.Prefix }}"
-    ><span>{{
-      scan.Prefix | stripSuffix: siteName | stripSuffix | date: 'medium'
-    }}</span>
-  </a>
-</div>
+<h2 class="mb4 f4 mt3 lh-copy">Completed Scans for {{ siteName }}</h2>
+<ul class="list pl0 ml0 center ba b--light-silver br2">
+  <li
+    class="scan-item ph3 pv3"
+    [ngClass]="isLast ? '' : 'bb b--light-silver'"
+    *ngFor="let scan of siteScans; last as isLast"
+  >
+    <a class="link fw6 blue dim" routerLink="/scans/{{ scan.Prefix }}"
+      ><span>{{
+        scan.Prefix | stripSuffix: siteName | stripSuffix | date: 'medium'
+      }}</span>
+    </a>
+  </li>
+</ul>
