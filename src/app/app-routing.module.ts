@@ -1,3 +1,4 @@
+import { NewScanComponent } from './views/new-scan/new-scan.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ScanWebpageDetailComponent } from './views/scan-webpage-detail/scan-webpage-detail.component';
@@ -6,6 +7,7 @@ import { ScansLandingComponent } from './views/scans-landing/scans-landing.compo
 import { SiteScansLandingComponent } from './views/site-scan-landing/site-scan-landing.component';
 
 const routes: Routes = [
+  { path: 'new-scan', component: NewScanComponent },
   { path: 'sites', component: ScansLandingComponent },
   { path: 'scans/:sitename', component: SiteScansLandingComponent },
   {

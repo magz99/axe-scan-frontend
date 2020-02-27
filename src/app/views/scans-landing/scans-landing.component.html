@@ -1,6 +1,12 @@
 <h2 class="f4 mb4 lh-copy">Completed Scans</h2>
-<div class="scan-item mb3" *ngFor="let site of siteList">
-  <a class="link fw6 blue dim" routerLink="/scans/{{ site.Prefix }}"
-    ><span>{{ site.Prefix | stripSuffix }}</span>
-  </a>
-</div>
+<ul class="list pl0 ml0 center ba b--light-silver br2">
+  <li
+    class="scan-item ph3 pv3"
+    [ngClass]="isLast ? '' : 'bb b--light-silver'"
+    *ngFor="let site of siteList; last as isLast"
+  >
+    <a class="link fw6 blue dim" routerLink="/scans/{{ site.Prefix }}"
+      ><span>{{ site.Prefix | stripSuffix }}</span>
+    </a>
+  </li>
+</ul>

@@ -1,3 +1,4 @@
+import { NewScanComponent } from './views/new-scan/new-scan.component';
 import { SiteListingService } from './services/site-listing.service';
 import { StripSuffixPipe } from './pipes/test-pipe/strip-suffix.pipe';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,7 +12,7 @@ import { UrlListComponent } from './components/url-list/url-list.component';
 import { ScanWebpageDetailComponent } from './views/scan-webpage-detail/scan-webpage-detail.component';
 import { HeaderNavigationComponent } from './components/header-navigation/header-navigation.component';
 import { FooterNavigationComponent } from './components/footer-navigation/footer-navigation.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SiteScansLandingComponent } from './views/site-scan-landing/site-scan-landing.component';
 import { ScanLoaderService } from './services/scan-loader.service';
@@ -19,6 +20,7 @@ import { ScanLoaderService } from './services/scan-loader.service';
 @NgModule({
   declarations: [
     AppComponent,
+    NewScanComponent,
     ScansLandingComponent,
     SiteScansLandingComponent,
     ScanDetailComponent,
@@ -28,12 +30,7 @@ import { ScanLoaderService } from './services/scan-loader.service';
     FooterNavigationComponent,
     StripSuffixPipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [SiteListingService, ScanLoaderService],
   bootstrap: [AppComponent],
 })

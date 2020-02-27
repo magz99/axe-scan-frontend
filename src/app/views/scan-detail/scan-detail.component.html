@@ -2,23 +2,29 @@
   <h2 class="mb4 f4 lh-copy">
     Scan Results for {{ siteName }} - {{ data.url }}
   </h2>
-  <div class="violation mb4 pa2" *ngFor="let violation of data.violations">
-    <h3 class="description f5 fw6 mb3">
-      {{ violation.help }}
-    </h3>
-    <div
-      class="violation-detail ba b--purple mb3 ph2 pv3"
-      *ngFor="let node of violation.nodes"
-    >
-      <h4 class="mb3">
-        <span>{{ node.any[0].message }}</span
-        ><span class="impact jellybean ba b--red br-pill ml2 ph2">{{
-          node.impact
-        }}</span>
-      </h4>
-      <div class="html-code pa2">
-        <pre class="pre lh-title bg-blue white pa2">{{ node.html }}</pre>
-      </div>
-    </div>
-  </div>
+  <ul class="list">
+    <li class="violation mb4 pa2" *ngFor="let violation of data.violations">
+      <h3 class="description f5 fw6 mb3">
+        {{ violation.help }}
+      </h3>
+      <ul class="list">
+        <li
+          class="violation-detail mb3 ph2 pv3"
+          *ngFor="let node of violation.nodes"
+        >
+          <article class="center hidden ba">
+            <h4 class="f4 bg-blue white mv0 pv2 ph3">
+              <span>{{ node.any[0].message }}</span
+              ><span class="impact jellybean ba b--red br-pill ml2 ph2">{{
+                node.impact
+              }}</span>
+            </h4>
+            <div class="html-code pa3 bt">
+              <pre class="pre lh-title bg-white black pa2">{{ node.html }}</pre>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </div>
