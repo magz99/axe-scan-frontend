@@ -1,14 +1,13 @@
 export interface AWSListing {
-  CommonPrefixes: CommonPrefix[];
+  prefixes: AWSSite[];
 }
 
-export interface CommonPrefix {
-  Prefix: string;
+export interface AWSSite {
+  prefix: string;
 }
 
-export interface AWSSiteListing {
-  Contents: Content[];
-  CommonPrefixes: CommonPrefix[];
+export interface AWSSiteListingResponse {
+  data: AWSListing;
 }
 
 export interface Content {
