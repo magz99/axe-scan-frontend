@@ -1,4 +1,8 @@
-<div *ngIf="scanData$ | async as data">
+<a class="link fw5 red dim" routerLink="/scans/{{ siteName }}/{{ folderName }}"
+  ><span class="text">ᐊ Back to {{ siteName }} Page Listing</span></a
+>
+
+<div *ngIf="scanData$ | async as data" class="mt3">
   <h2 class="mb4 f4 lh-copy">
     Scan Results for {{ siteName }} - {{ data.url }}
   </h2>
@@ -14,10 +18,19 @@
         >
           <article class="center hidden ba">
             <h4 class="f4 bg-blue white mv0 pv2 ph3">
-              <span>{{ node.any[0].message }}</span
-              ><span class="impact jellybean ba b--red br-pill ml2 ph2">{{
-                node.impact
-              }}</span>
+              <ng-container *ngIf="node.any[0] && node.any[0].message">
+                <span>{{ node.any[0].message }}</span>
+              </ng-container>
+              <span
+                class="impact jellybean ba br-pill ml2 ph2"
+                [ngClass]="{
+                  'bg-red b--red': node.impact === 'critical',
+                  'bg-light-red b--light-red': node.impact === 'serious',
+                  'bg-orange b--orange': node.impact === 'moderate',
+                  'bg-yellow b--yellow': node.impact === 'minor'
+                }"
+                >{{ node.impact }}</span
+              >
             </h4>
             <div class="html-code pa3 bt">
               <pre class="pre lh-title bg-white black pa2">{{ node.html }}</pre>
