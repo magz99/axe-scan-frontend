@@ -36,9 +36,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Next Steps
 
-- Finish the website summary view
-- Finish the Page detail view
 - Should be printer-friendly (or PDF friendly)
-- All data should come from API calls (eventually hooked up to AWS)
 - This app will eventually be setup on an EC2 instance
 - Authentication for different users
