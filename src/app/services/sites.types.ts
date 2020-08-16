@@ -1,3 +1,15 @@
+// Display Types
+
+export interface AWSSiteListing {
+  siteFolders: AWSSite[];
+}
+
+export interface FixedAWSSite {
+  prefix: string;
+  displayName: string;
+}
+
+// Response Types
 export interface AWSListing {
   prefixes: AWSSite[];
 }
@@ -8,12 +20,4 @@ export interface AWSSite {
 
 export interface AWSSiteListingResponse {
   data: AWSListing;
-}
-
-export interface Content {
-  Key: string;
-  LastModified: string;
-  ETag: string;
-  Size: number;
-  StorageClass: string;
 }
