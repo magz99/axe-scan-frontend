@@ -5,8 +5,8 @@
     [ngClass]="isLast ? '' : 'bb b--light-silver'"
     *ngFor="let site of siteList; last as isLast"
   >
-    <a class="link fw6 blue dim" routerLink="/scans/{{ site.Prefix }}"
-      ><span>{{ site.Prefix | stripSuffix }}</span>
+    <a class="link fw6 blue dim" routerLink="/scans/{{ site.prefix }}"
+      ><span>{{ site.prefix }}</span>
     </a>
   </li>
 </ul>
