@@ -22,7 +22,6 @@ router.get('/', function (req, res, next) {
         const prefixes = data.CommonPrefixes.map((prefix) => ({
           prefix: prefix.Prefix.slice(0, -1),
         }));
-        // console.log({ prefixes: prefixes });
 
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.status(200);
@@ -34,17 +33,6 @@ router.get('/', function (req, res, next) {
 
 // TODO: This should come from the AWS api and cached in our Store.
 router.get('/:siteName', function (req, res, next) {
-  // res.setHeader('Access-Control-Allow-Origin', '*');
-
-  // if (req.params.siteName === 'rangle.io') {
-  //   res.status(200).sendFile('rangle-scan-list.json', {
-  //     root: path.join(__dirname, '../public'),
-  //   });
-  // }
-  // var jsonRes = {};
-  // jsonRes.scans = jsonFile.CommonPrefixes;
-  // res.status(200);
-  // res.json(jsonRes);
   // Create an S3 client
   var s3 = new AWS.S3();
   const params = {
