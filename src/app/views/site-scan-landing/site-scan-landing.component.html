@@ -8,10 +8,8 @@
     [ngClass]="isLast ? '' : 'bb b--light-silver'"
     *ngFor="let scan of siteScans; last as isLast"
   >
-    <a class="link fw6 blue dim" routerLink="/scans/{{ scan.Prefix }}"
-      ><span>{{
-        scan.Prefix | stripSuffix: siteName | stripSuffix | date: 'medium'
-      }}</span>
+    <a class="link fw6 blue dim" routerLink="/scans/{{ scan.prefix }}"
+      ><span>{{ scan.displayName | date: 'medium' }}</span>
     </a>
   </li>
 </ul>

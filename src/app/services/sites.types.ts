@@ -10,10 +10,11 @@ export interface AWSSiteListingResponse {
   data: AWSListing;
 }
 
-export interface Content {
-  Key: string;
-  LastModified: string;
-  ETag: string;
-  Size: number;
-  StorageClass: string;
+export interface AWSSiteListing {
+  siteFolders: AWSSite[];
+}
+
+export interface FixedAWSSite {
+  prefix: string;
+  displayName: string;
 }
