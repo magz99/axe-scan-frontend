@@ -5,8 +5,8 @@
     [ngClass]="isLast ? '' : 'bb b--light-silver'"
     *ngFor="let page of scannedWebpages; last as isLast"
   >
-    <a class="link fw6 blue dim" routerLink="{{ page.fileName }}"
-      >{{ page.siteUrl }} - {{ page.errorCount }}</a
+    <a class="link fw6 blue dim" routerLink="{{ page.filename }}"
+      >{{ page.url }} {{ page.errorCount ? '-' : '' }} {{ page?.errorCount }}</a
     >
   </li>
 </ul>

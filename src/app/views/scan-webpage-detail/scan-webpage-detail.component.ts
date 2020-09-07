@@ -15,24 +15,27 @@ export class ScanWebpageDetailComponent implements OnInit {
   scans: Scan[];
   siteName: string;
   folderName: string;
+  masterScanData: MasterScan = {} as MasterScan;
 
   constructor(
     private scanService: ScanLoaderService,
     private route: ActivatedRoute
   ) {}
+
+  // TODO: move this to an Effect
   ngOnInit() {
     this.subscriptions = this.route.params
       .pipe(
-        map(params => [params.sitename, params.scanfoldername]),
-        switchMap(siteValues => {
+        map((params) => [params.sitename, params.scanfoldername]),
+        switchMap((siteValues) => {
           this.siteName = siteValues[0];
           this.folderName = siteValues[1];
           return this.scanService.getMasterJSON(this.siteName, this.folderName);
         })
       )
       .subscribe((data: MasterScan) => {
-        this.scans = data.scans;
-        console.log(this.scans);
+        this.masterScanData = data;
+        this.scans = this.masterScanData.scannedPages;
       });
   }
 }

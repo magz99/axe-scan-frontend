@@ -1,14 +1,14 @@
 var express = require('express');
-var path = require('path');
-var fs = require('fs');
 var router = express.Router();
 var AWS = require('aws-sdk');
+const { AWS_SCAN_BUCKET } = require('./shared/common-vars');
+const s3 = new AWS.S3();
 
 router.get('/', function (req, res, next) {
   // Create an S3 client
-  var s3 = new AWS.S3();
+  // var s3 = new AWS.S3();
   const params = {
-    Bucket: 'project-axe-tool-test-bucket-json-results',
+    Bucket: AWS_SCAN_BUCKET,
     Delimiter: '/',
   };
   s3.listObjectsV2(params, function (err, data) {
@@ -34,9 +34,9 @@ router.get('/', function (req, res, next) {
 // TODO: This should come from the AWS api and cached in our Store.
 router.get('/:siteName', function (req, res, next) {
   // Create an S3 client
-  var s3 = new AWS.S3();
+  // const s3 = new AWS.S3();
   const params = {
-    Bucket: 'project-axe-tool-test-bucket-json-results',
+    Bucket: AWS_SCAN_BUCKET,
     Delimiter: '/',
     Prefix: `${req.params.siteName}/`,
   };
