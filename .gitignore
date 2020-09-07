@@ -44,3 +44,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/aws-vars.ts
+src/proxy.conf.json
