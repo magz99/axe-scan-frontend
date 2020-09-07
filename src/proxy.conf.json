@@ -1,0 +1,38 @@
+{
+  "/api/scannedSiteList": {
+    "target": "https://0huw2vaqr3.execute-api.us-east-1.amazonaws.com/default/scannedSiteListS3",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/scannedSiteList": ""
+    }
+  },
+  "/api/singleSiteAllScans": {
+    "target": "https://xuuxj86tmb.execute-api.us-east-1.amazonaws.com/default/singleSiteAllScans",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/singleSiteAllScans": ""
+    }
+  },
+  "/api/scannedSingleSiteMappingS3": {
+    "target": "https://9fqgrybhg2.execute-api.us-east-1.amazonaws.com/scannedSingleSiteMappingS3",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/scannedSingleSiteMappingS3": ""
+    }
+  },
+  "/api/singleSiteSingleScan": {
+    "target": "https://hlkgqouo08.execute-api.us-east-1.amazonaws.com/singleSiteSingleScan",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/singleSiteSingleScan": ""
+    }
+  }
+}

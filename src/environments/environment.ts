@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  allSitesScansUrl:
+    'https://0huw2vaqr3.execute-api.us-east-1.amazonaws.com/default/scannedSiteListS3',
+  singleSiteScansUrl:
+    'https://xuuxj86tmb.execute-api.us-east-1.amazonaws.com/default/singleSiteAllScans',
+  singleSiteMasterUrl:
+    'https://9fqgrybhg2.execute-api.us-east-1.amazonaws.com/scannedSingleSiteMappingS3',
+  singleSiteSingleScanUrl:
+    'https://hlkgqouo08.execute-api.us-east-1.amazonaws.com/singleSiteSingleScan',
 };
 
 /*
