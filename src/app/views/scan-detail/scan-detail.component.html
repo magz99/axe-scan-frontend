@@ -1,5 +1,8 @@
-<a class="link fw5 red dim" routerLink="/scans/{{ siteName }}/{{ folderName }}"
-  ><span class="text">ᐊ Back to {{ siteName }} Page Listing</span></a
+<a
+  *ngIf="scanData$ | async"
+  class="link fw5 red dim"
+  [routerLink]="'/scans/' + siteName + '/' + folderName"
+  ><span class="text">◄ Back to {{ siteName }} Page Listing</span></a
 >
 
 <div *ngIf="scanData$ | async as data" class="mt3">
@@ -17,7 +20,7 @@
           *ngFor="let node of violation.nodes"
         >
           <article class="center hidden ba">
-            <h4 class="f4 bg-blue white mv0 pv2 ph3">
+            <h4 class="f4 bg-blue white mv0 pv2 ph3 lh-title">
               <ng-container *ngIf="node.any[0] && node.any[0].message">
                 <span>{{ node.any[0].message }}</span>
               </ng-container>
