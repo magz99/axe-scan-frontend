@@ -11,9 +11,9 @@ import { AxeScan } from 'src/app/services/scan.types';
   styleUrls: ['./scan-detail.component.less'],
 })
 export class ScanDetailComponent implements OnInit {
-  siteName: string;
-  folderName: string;
-  scanFile: string;
+  siteName = '';
+  folderName = '';
+  scanFile = '';
   scanData$: Observable<AxeScan>;
   subscriptions: Subscription;
 
@@ -24,8 +24,12 @@ export class ScanDetailComponent implements OnInit {
 
   ngOnInit() {
     this.scanData$ = this.route.params.pipe(
-      map(params => [params.sitename, params.scanfoldername, params.scanfile]),
-      switchMap(siteValues => {
+      map((params) => [
+        params.sitename,
+        params.scanfoldername,
+        params.scanfile,
+      ]),
+      switchMap((siteValues) => {
         this.siteName = siteValues[0];
         this.folderName = siteValues[1];
         this.scanFile = siteValues[2];
