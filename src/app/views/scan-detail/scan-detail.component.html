@@ -2,7 +2,7 @@
   *ngIf="scanData$ | async"
   class="link fw5 red dim"
   [routerLink]="'/scans/' + siteName + '/' + folderName"
-  ><span class="text">ᐊ Back to {{ siteName }} Page Listing</span></a
+  ><span class="text">◄ Back to {{ siteName }} Page Listing</span></a
 >
 
 <div *ngIf="scanData$ | async as data" class="mt3">

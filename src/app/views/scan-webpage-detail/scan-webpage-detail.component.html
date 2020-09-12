@@ -1,14 +1,15 @@
 <a class="link fw5 red dim" routerLink="/scans/{{ siteName }}"
-  ><span class="text">ᐊ Back to {{ siteName }} Scans Landing</span></a
+  ><span class="text">◄ Back to {{ siteName }} Scans Landing</span></a
 >
-<h2 class="f4 mb4 mt3 lh-copy">Scanned Pages for {{ siteName }}</h2>
+<h2 class="f4 mb4 mt3 lh-copy">Result Summary for {{ siteName }}</h2>
 <ng-container *ngIf="masterScanData.topViolations">
-  <p class="mb5">Total Violations: {{ masterScanData.totalViolations }}</p>
-  <table class="f6 w-100 mw8 center" cellspacing="0">
+  <table class="f6 w-100 mw8 center mb4" cellspacing="0">
     <thead>
       <tr>
-        <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Violation Type</th>
-        <th class="fw6 bb b--black-20 tl pb3 pr3 bg-white">Count</th>
+        <th class="f5 fw6 bb b--black-20 tl pb3 pr3 bg-white">
+          Violation Type
+        </th>
+        <th class="f5 fw6 bb b--black-20 tl pb3 pr3 bg-white">Count</th>
       </tr>
     </thead>
     <tbody class="lh-copy">
@@ -36,9 +37,15 @@
           {{ masterScanData.topViolations.minor }}
         </td>
       </tr>
+      <tr>
+        <td class="pv3 pr3 fw6 bb b--black-20">Total violations</td>
+        <td class="pv3 pr3 bb b--black-20">
+          {{ masterScanData.totalViolations }}
+        </td>
+      </tr>
     </tbody>
   </table>
 </ng-container>
 
-<div class="bb mv3"></div>
+<h2 class="f4 mb4 mt3 lh-copy">Scanned Pages for {{ siteName }}</h2>
 <app-url-list [scannedWebpages]="scans"> </app-url-list>
