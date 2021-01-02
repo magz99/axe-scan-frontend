@@ -1,12 +1,17 @@
-<h2 class="f4 mb4 lh-copy">Completed Scans</h2>
-<ul class="list pl0 ml0 center ba b--light-silver br2">
-  <li
-    class="scan-item ph3 pv3"
-    [ngClass]="isLast ? '' : 'bb b--light-silver'"
-    *ngFor="let site of siteList; last as isLast"
-  >
-    <a class="link fw6 blue dim" routerLink="/scans/{{ site.prefix }}"
-      ><span>{{ site.prefix }}</span>
-    </a>
-  </li>
-</ul>
+<ng-container *ngIf="siteList$ | async as siteResponse">
+  <ng-container *ngIf="siteResponse.prefixes as sites">
+    <h2 class="f4 mb4 lh-copy">Completed Scans</h2>
+    <ul class="list pl0 ml0 center ba b--light-silver br2">
+      <li
+        class="scan-item ph3 pv3"
+        [ngClass]="isLast ? '' : 'bb b--light-silver'"
+        *ngFor="let site of sites; last as isLast"
+      >
+        <a class="link fw6 blue dim" routerLink="/scans/{{ site.prefix }}"
+          ><span>{{ site.prefix }}</span>
+        </a>
+      </li>
+    </ul>
+  </ng-container>
+</ng-container>
+

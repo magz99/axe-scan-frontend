@@ -1,4 +1,4 @@
-import { SiteListingService } from 'src/app/services/site-listing.service';
+import { SiteListingAPIService } from 'src/app/services/site-listing.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {
   AWSSiteListing,
@@ -19,7 +19,7 @@ export class SiteScansLandingComponent implements OnInit, OnDestroy {
   subscriptions: Subscription;
   siteName: string;
   constructor(
-    private siteService: SiteListingService,
+    private siteService: SiteListingAPIService,
     private route: ActivatedRoute
   ) {}
 

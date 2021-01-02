@@ -1,5 +1,5 @@
 import { NewScanComponent } from './views/new-scan/new-scan.component';
-import { SiteListingService } from './services/site-listing.service';
+import { SiteListingAPIService } from './services/site-listing.service';
 import { StripSuffixPipe } from './pipes/test-pipe/strip-suffix.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -31,7 +31,7 @@ import { ScanLoaderService } from './services/scan-loader.service';
     StripSuffixPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [SiteListingService, ScanLoaderService],
+  providers: [SiteListingAPIService, ScanLoaderService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
