@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { MasterScan } from './types/master-scan.types';
+import { AxeScan } from './types/scan.types';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ScanLoaderService {
+export class SiteScanAPIService {
   constructor(private http: HttpClient) {}
 
-  getMasterJSON(sitename: string, foldername: string) {
-    return this.http.get(
+  getMasterJSON(sitename: string, foldername: string): Observable<MasterScan> {
+    return this.http.get<MasterScan>(
       `api/scannedSingleSiteMappingS3?siteName=${sitename}&folderName=${foldername.replace(
         /:/gi,
         ''
@@ -21,8 +23,8 @@ export class ScanLoaderService {
     sitename: string,
     foldername: string,
     filename: string
-  ): Observable<any> {
-    return this.http.get(
+  ): Observable<AxeScan> {
+    return this.http.get<AxeScan>(
       `api/singleSiteSingleScan?siteName=${sitename}&folderName=${foldername.replace(
         /:/gi,
         ''

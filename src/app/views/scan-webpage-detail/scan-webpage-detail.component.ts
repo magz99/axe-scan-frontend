@@ -1,28 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { ScanLoaderService } from '../../services/scan-loader.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { MasterScan, Scan } from '../../services/types/master-scan.types';
+import { SiteScanFacadeService } from 'src/app/services/site-scan-facade.service';
 
 @Component({
   selector: 'app-scan-webpage-detail',
   templateUrl: './scan-webpage-detail.component.html',
   styleUrls: ['./scan-webpage-detail.component.less'],
 })
-export class ScanWebpageDetailComponent implements OnInit {
-  subscriptions: Subscription;
+export class ScanWebpageDetailComponent implements OnInit, OnDestroy {
+  subscriptions: Subscription = new Subscription();
   scans: Scan[];
   siteName: string;
   folderName: string;
   masterScanData: MasterScan = {} as MasterScan;
 
   constructor(
-    private scanService: ScanLoaderService,
+    private siteScanFacadeService: SiteScanFacadeService,
     private route: ActivatedRoute
   ) {}
 
-  // TODO: move this to an Effect
   ngOnInit() {
     this.subscriptions = this.route.params
       .pipe(
@@ -30,12 +29,16 @@ export class ScanWebpageDetailComponent implements OnInit {
         switchMap((siteValues) => {
           this.siteName = siteValues[0];
           this.folderName = siteValues[1];
-          return this.scanService.getMasterJSON(this.siteName, this.folderName);
+          return this.siteScanFacadeService.getMasterJSON(this.siteName, this.folderName);
         })
       )
       .subscribe((data: MasterScan) => {
         this.masterScanData = data;
         this.scans = this.masterScanData.scannedPages;
       });
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.unsubscribe();
   }
 }
