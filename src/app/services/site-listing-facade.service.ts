@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { shareReplay } from 'rxjs/operators';
 import { SiteListingAPIService } from 'src/app/services/site-listing-api.service';
-import { AWSListing, AWSSiteListing } from 'src/app/services/sites.types';
+import { AWSListing, AWSSiteListing } from 'src/app/services/types/sites.types';
 
 @Injectable({
   providedIn: 'root'
