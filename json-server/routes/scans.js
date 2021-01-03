@@ -15,7 +15,7 @@ router.get('/:siteName/:folderName', function (req, res, next) {
 
   s3.getObject(params, function (err, data) {
     if (err) {
-      console.log(err, err.stack);
+      // console.log(err, err.stack);
       res.status(500);
     } else {
       if (data) {
@@ -41,7 +41,7 @@ router.get('/:siteName/:folderName/:scanFile', function (req, res, next) {
 
   s3.getObject(params, function (err, data) {
     if (err) {
-      console.log(err, err.stack);
+      // console.log(err, err.stack);
       res.status(500);
     } else {
       if (data) {

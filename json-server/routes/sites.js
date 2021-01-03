@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
   };
   s3.listObjectsV2(params, function (err, data) {
     if (err) {
-      console.log(err, err.stack);
+      // console.log(err, err.stack);
       res.status(500);
     }
     // an error occurred
@@ -42,7 +42,7 @@ router.get('/:siteName', function (req, res, next) {
   };
   s3.listObjectsV2(params, function (err, data) {
     if (err) {
-      console.log(err, err.stack);
+      // console.log(err, err.stack);
       res.status(500);
     }
     // an error occurred
