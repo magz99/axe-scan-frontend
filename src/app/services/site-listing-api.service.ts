@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AWSListing, AWSSiteListing } from './sites.types';
+import { AWSListing, AWSSiteListing } from './types/sites.types';
 
 @Injectable({
   providedIn: 'root',

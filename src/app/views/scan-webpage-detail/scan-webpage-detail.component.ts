@@ -3,7 +3,7 @@ import { ScanLoaderService } from '../../services/scan-loader.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { MasterScan, Scan } from '../../services/master-scan.types';
+import { MasterScan, Scan } from '../../services/types/master-scan.types';
 
 @Component({
   selector: 'app-scan-webpage-detail',

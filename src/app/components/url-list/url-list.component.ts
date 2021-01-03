@@ -1,28 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Scan } from 'src/app/services/master-scan.types';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Scan } from 'src/app/services/types/master-scan.types';
 
 @Component({
   selector: 'app-url-list',
   templateUrl: './url-list.component.html',
   styleUrls: ['./url-list.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UrlListComponent implements OnInit {
+export class UrlListComponent {
   @Input() scannedWebpages: Scan[] = [];
-
-  // scannedWebpages = [
-  //   {
-  //     url: 'https://www.toyota.ca',
-  //     errorCount: 9,
-  //     scanUrl: 'page/SOMEID',
-  //   },
-  //   {
-  //     url: 'https://www.toyota.ca/news',
-  //     errorCount: 0,
-  //     scanUrl: 'page/SOMEID',
-  //   },
-  // ];
-
-  constructor() {}
-
-  ngOnInit() {}
 }

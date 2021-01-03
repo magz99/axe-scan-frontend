@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {
   AWSSiteListing,
   FixedAWSSite,
-} from 'src/app/services/sites.types';
+} from 'src/app/services/types/sites.types';
 import { Observable, Subscription } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';

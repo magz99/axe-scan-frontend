@@ -3,7 +3,7 @@ import { ScanLoaderService } from '../../services/scan-loader.service';
 import { Subscription, Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
-import { AxeScan } from 'src/app/services/scan.types';
+import { AxeScan } from 'src/app/services/types/scan.types';
 
 @Component({
   selector: 'app-scan-detail',
