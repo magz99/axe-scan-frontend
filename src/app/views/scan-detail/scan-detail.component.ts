@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ScanLoaderService } from '../../services/scan-loader.service';
 import { Subscription, Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
 import { AxeScan } from 'src/app/services/types/scan.types';
+import { SiteScanFacadeService } from 'src/app/services/site-scan-facade.service';
 
 @Component({
   selector: 'app-scan-detail',
@@ -18,7 +18,7 @@ export class ScanDetailComponent implements OnInit {
   subscriptions: Subscription;
 
   constructor(
-    private scanService: ScanLoaderService,
+    private siteScanFacadeService: SiteScanFacadeService,
     private route: ActivatedRoute
   ) {}
 
@@ -33,19 +33,12 @@ export class ScanDetailComponent implements OnInit {
         this.siteName = siteValues[0];
         this.folderName = siteValues[1];
         this.scanFile = siteValues[2];
-        return this.scanService.getScanFile(
+        return this.siteScanFacadeService.getScanFile(
           this.siteName,
           this.folderName,
           this.scanFile
         );
       })
     );
-    // .subscribe((data: AxeScan) => {
-    //   this.scanData = data;
-    //   console.log(
-    //     'violations length: ',
-    //     this.scanData.violations ? this.scanData.violations.length : 0
-    //   );
-    // });
   }
 }

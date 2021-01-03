@@ -15,7 +15,7 @@ import { FooterNavigationComponent } from './components/footer-navigation/footer
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SiteScansLandingComponent } from './views/site-scan-landing/site-scan-landing.component';
-import { ScanLoaderService } from './services/scan-loader.service';
+import { SiteScanAPIService } from './services/site-scan-api.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { ScanLoaderService } from './services/scan-loader.service';
     StripSuffixPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [SiteListingAPIService, ScanLoaderService],
+  providers: [SiteListingAPIService, SiteScanAPIService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
