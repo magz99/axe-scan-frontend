@@ -1,5 +1,5 @@
 import { NewScanComponent } from './views/new-scan/new-scan.component';
-import { SiteListingAPIService } from './services/site-listing.service';
+import { SiteListingAPIService } from './services/site-listing-api.service';
 import { StripSuffixPipe } from './pipes/test-pipe/strip-suffix.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
