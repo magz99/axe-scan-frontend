@@ -1,7 +1,7 @@
 import { AWSListing, AWSSite } from '../../services/sites.types';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SiteListingFacadeService } from './site-listing-facade.service';
+import { SiteListingFacadeService } from '../../services/site-listing-facade.service';
 
 @Component({
   selector: 'app-scans-landing',
