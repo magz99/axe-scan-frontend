@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { SiteListingFacadeService } from 'src/app/services/site-listing-facade.service';
 
 import { ScansLandingComponent } from './scans-landing.component';
 
@@ -8,9 +10,10 @@ describe('ScansLandingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScansLandingComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [ScansLandingComponent],
+      providers: [SiteListingFacadeService],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

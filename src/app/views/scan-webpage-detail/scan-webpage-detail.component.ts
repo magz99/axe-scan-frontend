@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { Subscription, NEVER } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { MasterScan, Scan } from '../../services/types/master-scan.types';
 import { SiteScanFacadeService } from 'src/app/services/site-scan-facade.service';
 
@@ -29,7 +29,14 @@ export class ScanWebpageDetailComponent implements OnInit, OnDestroy {
         switchMap((siteValues) => {
           this.siteName = siteValues[0];
           this.folderName = siteValues[1];
-          return this.siteScanFacadeService.getMasterJSON(this.siteName, this.folderName);
+          return this.siteScanFacadeService.getMasterJSON(
+            this.siteName,
+            this.folderName
+          );
+        }),
+        catchError((err) => {
+          console.log('scan webpage detail: could not fetch: ', err);
+          return NEVER;
         })
       )
       .subscribe((data: MasterScan) => {
