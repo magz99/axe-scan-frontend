@@ -1,21 +1,17 @@
-version: 2.1
+version: 2
 jobs:
   build:
+    working_directory: ~/my-project
     docker:
-      - image: circleci/node:13-buster-browsers-legacy # the primary container, where your job's commands are run
+      - image: circleci/node:10-browsers
     steps:
-      - checkout # check out the code in the project directory
+      - checkout
       - restore_cache:
-          keys:
-            - scan-tool-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - run:
-          name: Install dependencies
-          command: '[ ! -d node_modules ] && npm ci || true'
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: npm install
       - save_cache:
-          key: scan-tool-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
-            - node_modules
-      - run:
-          name: Run Lint
-          command: npm run lint
-      - run: echo "hello world" # run the `echo` command
+            - 'node_modules'
+      - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
