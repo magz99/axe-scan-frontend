@@ -1,14 +1,18 @@
 {
   "name": "axe-scan-tool",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Magali Bautista-Lee",
+    "email": "magzb.99@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start-ng": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "magz": "ng serve && node ./json-server/bin/www"
+    "start": "node -r dotenv-flow/config node_modules/@angular/cli/bin/ng serve"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^9.1.13",
     "@angular/router": "^9.1.13",
     "@ngrx/store": "^9.2.1",
+    "dotenv": "^8.2.0",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.6.3",
     "tslib": "^1.10.0",
@@ -35,6 +40,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.20.1",
     "codelyzer": "^5.1.2",
+    "dotenv-flow": "^3.2.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.1.0",
